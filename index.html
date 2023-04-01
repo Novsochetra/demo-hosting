@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Direction</title>
+    <style>
+      .header {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        margin: 8px 0px;
+        font-size: 40px;
+      }
+
+      .container {
+        display: flex;
+        flex: 1;
+        border-radius: 8px;
+        padding: 8px;
+        overflow-x: scroll;
+        background-color: burlywood;
+      }
+
+      .item-container {
+        display: flex;
+        width: 300px;
+        height: 200px;
+        border-radius: 8px;
+        background-color: coral;
+        padding: 8px;
+        margin: 8px;
+      }
+
+      .item-container + p {
+        text-align: center;
+      }
+
+      .item-container > div {
+        width: 50px;
+        height: 50px;
+        background-color: blueviolet;
+        border-radius: 8px;
+        margin: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        color: #fff;
+      }
+
+      .col {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .row {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .row-reverse {
+        display: flex;
+        flex-direction: row-reverse;
+      }
+
+      .col-reverse {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+
+      .flex-grow {
+        flex-grow: 1;
+      }
+
+      .flex-wrap {
+        flex-wrap: wrap;
+      }
+
+      .flex-wrap-reverse {
+        flex-wrap: wrap-reverse;
+      }
+
+      .flex-shrink {
+        flex-shrink: 1;
+      }
+
+      .flex-flow {
+        flex-flow: row wrap;
+      }
+
+      .justify-content-end {
+        justify-content: end;
+      }
+
+      .justify-content-center {
+        justify-content: center;
+      }
+
+      .justify-content-space-between {
+        justify-content: space-between;
+      }
+
+      .justify-content-space-around {
+        justify-content: space-around;
+      }
+
+      .justify-content-space-evenly {
+        justify-content: space-evenly;
+      }
+
+      .height-auto {
+        height: auto !important;
+      }
+
+      .text-12px {
+        font-size: 12px;
+      }
+
+      .align-item-end {
+        align-items: flex-end;
+      }
+
+      .align-item-center {
+        align-items: center;
+      }
+
+      .align-item-stretch {
+        align-items: stretch;
+      }
+
+      .align-content-start {
+        align-content: flex-start;
+      }
+
+      .align-content-end {
+        align-content: flex-end;
+      }
+
+      .align-content-center {
+        align-content: center;
+      }
+
+      .align-content-space-between {
+        align-content: space-between;
+      }
+
+      .align-content-space-around {
+        align-content: space-around;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header"><h3>Flex Direction</h3></div>
+    <div class="container">
+      <div>
+        <div class="item-container row">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+        </div>
+        <p>Row</p>
+      </div>
+
+      <div>
+        <div class="item-container row-reverse">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+        </div>
+        <p>Row Reverse</p>
+      </div>
+
+      <div>
+        <div class="item-container col">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+        </div>
+        <p>Column</p>
+      </div>
+
+      <div>
+        <div class="item-container col-reverse">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+        </div>
+        <p>Column Reverse</p>
+      </div>
+    </div>
+
+    <div class="header"><h3>Flex Grow</h3></div>
+    <div class="container">
+      <div>
+        <div class="item-container row">
+          <div>1</div>
+          <div class="flex-grow">2</div>
+          <div>3</div>
+        </div>
+        <p>Item 2 Flex Grow</p>
+      </div>
+    </div>
+
+    <div class="header"><h3>Flex Wrap</h3></div>
+    <div class="container">
+      <div>
+        <div class="item-container row flex-wrap">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+          <div>8</div>
+        </div>
+        <p>wrap</p>
+      </div>
+
+      <div>
+        <div class="item-container row flex-wrap-reverse">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+          <div>8</div>
+        </div>
+        <p>Wrap Reverse</p>
+      </div>
+    </div>
+
+    <div class="header"><h3>Flex Shrink</h3></div>
+    <div class="container">
+      <div>
+        <div class="item-container row">
+          <div class="flex-grow">1</div>
+          <div class="flex-shrink">2</div>
+          <div class="flex-grow">3</div>
+        </div>
+        <p>Shrink</p>
+      </div>
+    </div>
+
+    <div class="header"><h3>Flex Flow</h3></div>
+    <div class="container">
+      <div>
+        <div class="item-container flex-flow">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+          <div>8</div>
+        </div>
+        <p>Flex Flow</p>
+      </div>
+    </div>
+
+    <div class="header"><h3>Justify Content</h3></div>
+    <div class="container flex-wrap">
+      <div>
+        <div class="item-container row">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+        </div>
+        <p>justify-content: start</p>
+      </div>
+
+      <div>
+        <div class="item-container row justify-content-end">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+        </div>
+        <p>justify-content: end</p>
+      </div>
+
+      <div>
+        <div class="item-container row justify-content-center">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+        </div>
+        <p>justify-content: center</p>
+      </div>
+
+      <div>
+        <div class="item-container row justify-content-space-around">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+        </div>
+        <p>justify-content: space-around</p>
+      </div>
+
+      <div>
+        <div class="item-container row justify-content-space-between">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+        </div>
+        <p>justify-content: space-between</p>
+      </div>
+
+      <div>
+        <div class="item-container row justify-content-space-evenly">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+        </div>
+        <p>justify-content: space-evenly</p>
+      </div>
+    </div>
+
+    <div class="header"><h3>Align Items</h3></div>
+    <div class="container flex-wrap">
+      <div>
+        <div class="item-container row">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+        </div>
+        <p>align-items: start</p>
+      </div>
+
+      <div>
+        <div class="item-container row align-item-end">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+        </div>
+        <p>align-items: end</p>
+      </div>
+
+      <div>
+        <div class="item-container row align-item-center">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+        </div>
+        <p>align-items: center</p>
+      </div>
+
+      <div>
+        <div class="item-container row align-item-stretch">
+          <div class="height-auto">1</div>
+          <div class="height-auto">2</div>
+          <div class="height-auto">3</div>
+        </div>
+        <p>align-items: stretch</p>
+      </div>
+    </div>
+
+    <div class="header"><h3>Align Content</h3></div>
+    <div class="container flex-wrap">
+      <div>
+        <div class="item-container row flex-wrap align-content-start">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+        </div>
+        <p>align-content: flex-start</p>
+      </div>
+
+      <div>
+        <div class="item-container row flex-wrap align-content-end">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+        </div>
+        <p>align-content: flex-end</p>
+      </div>
+
+      <div>
+        <div class="item-container row flex-wrap align-content-center">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+        </div>
+        <p>align-content: center</p>
+      </div>
+
+      <div>
+        <div class="item-container row flex-wrap align-content-space-around">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+        </div>
+        <p>align-content: space-around</p>
+      </div>
+
+      <div>
+        <div class="item-container row flex-wrap align-content-space-between">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+        </div>
+        <p>align-content: space-between</p>
+      </div>
+    </div>
+  </body>
+</html>
